@@ -176,7 +176,7 @@ class Divisors <One> :
   public Val<One>
 {};
 
-// Primality numbers. Why not?
+// Primality test. Why not?
 
 template <class a>
 class Prime :
