@@ -34,7 +34,7 @@ as_string_0(One, "One");
 as_string_0(Z, "Z");
 as_string_1(Not<a>, "Not(" + str<a>().s + ")");
 as_string_1(Prime<a>, "Prime(" + str<a>().s + ")");
-as_string_1(S<a>, "S(" + str<a>().s + ")");
+as_string_1(S<a>, boost::lexical_cast<string>(1 + a()));
 
 template <unsigned val>
 class str <Peano<val> > {
