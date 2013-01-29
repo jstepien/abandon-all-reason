@@ -1,9 +1,19 @@
 // Zero and its successors.
 
-class Z;
+class Z {
+public:
+  operator unsigned() {
+    return 0;
+  }
+};
 
 template <class t>
-class S;
+class S {
+public:
+  operator unsigned() {
+    return 1 + t();
+  }
+};
 
 typedef S<Z> One;
 
@@ -194,24 +204,3 @@ template <>
 class Peano <0> :
   public Val<Z>
 {};
-
-// Evaluates Peano numbers as unsigneds.
-
-template <class T>
-class Eval;
-
-template <class a>
-class Eval <S<a> > {
-public:
-  unsigned operator*() {
-    return 1 + *Eval<a>();
-  }
-};
-
-template <>
-class Eval <Z> {
-public:
-  unsigned operator*() {
-    return 0;
-  }
-};

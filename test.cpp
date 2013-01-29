@@ -63,9 +63,9 @@ public:
       << " is not equal to "
       << str<b>().s
       << "\n  because "
-      << *Eval<av>()
+      << av()
       << " != "
-      << *Eval<bv>()
+      << bv()
       << "\n";
     fail();
   }
