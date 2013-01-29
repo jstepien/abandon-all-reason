@@ -115,5 +115,5 @@ int main() {
   assert<Prime<Peano<37>::V> >();
   equal<Add<Peano<7>::V, Peano<5>::V>, Peano<12> >();
   equal<Mul<Peano<7>::V, Peano<5>::V>, Peano<35> >();
-  return failed ? 1 : 0;
+  return failed ? One() : Z();
 }
