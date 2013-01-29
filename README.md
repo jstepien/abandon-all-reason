@@ -4,6 +4,7 @@ Abandon All Reason
 A header-only, type-level, template metaprogramming extravaganza, in which your
 compiler performs primality test and other things it was definitely not designed
 for.
+[![Build Status](https://secure.travis-ci.org/jstepien/abandon-all-reason.png?branch=master)](http://travis-ci.org/jstepien/abandon-all-reason)
 
 Principal premise
 -----------------
