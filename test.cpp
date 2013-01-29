@@ -3,16 +3,16 @@
 #include <string>
 #include "abandon-all-reason.h"
 
-typedef std::string string;
-
-template <class a>
-class str;
-
 bool failed = false;
 
 void fail() {
   failed = true;
 }
+
+typedef std::string string;
+
+template <class a>
+class str;
 
 #define as_string_0(type, expr) \
   template <> \
