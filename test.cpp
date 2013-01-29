@@ -89,9 +89,6 @@ public:
 
 template <class a, class b>
 class really_assert {
-public:
-  really_assert() {
-  }
 };
 
 template <class a>
