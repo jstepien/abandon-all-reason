@@ -8,6 +8,12 @@ typedef std::string string;
 template <class a>
 class str;
 
+bool failed = false;
+
+void fail() {
+  failed = true;
+}
+
 #define as_string_0(type, expr) \
   template <> \
   class str < type > { \
@@ -61,6 +67,7 @@ public:
       << " != "
       << *Eval<bv>()
       << "\n";
+    fail();
   }
 };
 
@@ -94,6 +101,7 @@ public:
     std::cerr
       << str<a>().s
       << " is not true\n";
+    fail();
   }
 };
 
@@ -110,5 +118,5 @@ int main() {
   assert<Prime<Peano<37>::V> >();
   equal<Add<Peano<7>::V, Peano<5>::V>, Peano<12> >();
   equal<Mul<Peano<7>::V, Peano<5>::V>, Peano<35> >();
-  return 0;
+  return failed ? 1 : 0;
 }
