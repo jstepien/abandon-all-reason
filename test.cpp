@@ -77,10 +77,10 @@ class really_equal <a, b, v, v> {
 
 template <class a, class b>
 class equal {
-  typedef really_equal<a, b, typename a::V, typename b::V> my_equal_t;
-  my_equal_t really;
 public:
-  equal() : really(my_equal_t()) {}
+  equal() {
+    really_equal<a, b, typename a::V, typename b::V>();
+  }
 };
 
 #ifdef assert
@@ -104,10 +104,10 @@ public:
 
 template <class a>
 class assert {
-  typedef really_assert<a, typename a::V> my_assert_t;
-  my_assert_t really;
 public:
-  assert() : really(my_assert_t()) {}
+  assert() {
+    really_assert<a, typename a::V>();
+  }
 };
 
 int main() {
